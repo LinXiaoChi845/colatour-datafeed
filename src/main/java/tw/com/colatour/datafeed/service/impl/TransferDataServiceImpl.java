@@ -19,4 +19,15 @@ public class TransferDataServiceImpl implements TransferDataService {
         return dataFeedLogDao.getDataFeedLogs();
     }
 
+    @Override
+    public DataFeedLog getDataFeedLogByNo(Integer logNo) {
+        return dataFeedLogDao.getDataFeedLogByNo(logNo);
+    }
+
+    @Override
+    public Integer createDataFeedLog() {
+        return dataFeedLogDao.createDataFeedLog();
+    }
+
+
 }

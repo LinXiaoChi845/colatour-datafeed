@@ -8,4 +8,8 @@ public interface TransferDataService {
 
     List<DataFeedLog> getDataFeedLogs();
 
+    DataFeedLog getDataFeedLogByNo(Integer logNo);
+
+    Integer createDataFeedLog();
+
 }
