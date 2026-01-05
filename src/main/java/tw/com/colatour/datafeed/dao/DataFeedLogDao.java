@@ -8,8 +8,10 @@ public interface DataFeedLogDao {
 
     List<DataFeedLog> getDataFeedLogs();
 
-    DataFeedLog getDataFeedLogByNo(Integer logNo);
+    DataFeedLog getDataFeedLogByLogNo(Integer logNo);
 
     Integer createDataFeedLog();
+
+    void updateDataFeedLog(DataFeedLog dataFeedLog);
 
 }

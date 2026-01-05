@@ -35,7 +35,7 @@ public class DataFeedLogDaoImpl implements DataFeedLogDao {
     }
 
     @Override
-    public DataFeedLog getDataFeedLogByNo(Integer logNo) {
+    public DataFeedLog getDataFeedLogByLogNo(Integer logNo) {
         String mySql = "SELECT log_no, log_start_time, log_end_time, total_file_cnt, total_file_size " +
                 " FROM data_feed.data_feed_log " +
                 " WHERE log_no = :logNo";
@@ -74,5 +74,25 @@ public class DataFeedLogDaoImpl implements DataFeedLogDao {
         Integer myLogNo = (Integer)myKeyHolder.getKeys().get("log_no");
 
         return myLogNo;
+    }
+
+    @Override
+    public void updateDataFeedLog(DataFeedLog dataFeedLog) {
+        // 更新 DataFeedLog 的 log_end_time、total_file_cnt、total_file_size
+
+        String mySql = "UPDATE data_feed.data_feed_log " +
+                " SET log_end_time = :logEndTime, " +
+                " total_file_cnt = :totalFileCnt, " +
+                " total_file_size = :totalFileSize " +
+                " WHERE log_no = :logNo";
+
+        Map<String,Object> myMap = new HashMap<>();
+        myMap.put("logNo", dataFeedLog.getLogNo());
+        myMap.put("logEndTime", Timestamp.from(Instant.now()));
+        myMap.put("totalFileCnt", dataFeedLog.getTotalFileCnt());
+        myMap.put("totalFileSize", dataFeedLog.getTotalFileSize());
+
+        namedParameterJdbcTemplate.update(mySql, myMap);
+
     }
 }

@@ -1,0 +1,95 @@
+package tw.com.colatour.datafeed.model;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class DataFeedCustQueryA1 {
+
+    private Integer fileNo;
+    private String cqAaa;
+    private String cqAab;
+    private String cqAac;
+    private String cqAad;
+    private String cqAae;
+    private String cqAaf;
+    private String cqAag;
+    private String cqAah;
+    private String cqAai;
+    private String cqAaj;
+    private String cqAak;
+    private String cqAal;
+    private String cqAam;
+    private String cqAan;
+    private String cqAao;
+    private String cqAap;
+    private String cqAaq;
+    private String cqAar;
+    private String cqAas;
+    private String cqAat;
+    private String cqAau;
+    private String cqAav;
+    private String cqAaw;
+    private String cqAax;
+    private String cqAay;
+    private String cqAaz;
+    private String cqAba;
+    private String cqAbb;
+    private String cqAbc;
+    private String cqAbd;
+    private String cqAbe;
+    private String cqAbf;
+    private String cqAbg;
+    private String cqAbh;
+    private String cqAbi;
+    private String cqAbj;
+    private String cqAbk;
+    private String cqAbl;
+    private String cqAbm;
+    private String cqAbn;
+    private String cqAbo;
+    private String cqAbp;
+    private String cqAbq;
+    private String cqAbr;
+    private String cqAbs;
+    private String cqAbt;
+    private String cqAbu;
+    private String cqAbv;
+    private String cqAbw;
+    private String cqAbx;
+    private String cqAby;
+    private String cqAbz;
+    private String cqAca;
+    private String cqAcb;
+    private String cqAcc;
+    private String cqAcd;
+    private String cqAce;
+    private String cqAcf;
+    private String cqAcg;
+    private String cqAch;
+    private String cqAci;
+    private String cqAcj;
+    private String cqAck;
+    private String cqAcl;
+    private String cqAcm;
+    private String cqAcn;
+    private String cqAco;
+    private String cqAcp;
+    private String cqAcq;
+    private String cqAcr;
+    private String cqAcs;
+    private String cqAct;
+    private String cqAcu;
+    private String cqAcv;
+    private String cqAcw;
+    private String cqAcx;
+    private String cqAcy;
+    private String cqAcz;
+    private String cqAda;
+    private String cqAdb;
+    private String cqAdc;
+    private String cqAdd;
+    private String cqAde;
+
+}
