@@ -14,5 +14,16 @@ public class DataFeedLog {
     private Timestamp logEndTime;
     private Integer totalFileCnt;
     private Long totalFileSize;
+    private Integer successFileCnt;
+    private Long successFileSize;
+    private Integer nonEmptyFileCnt;
+    private Long nonEmptyFileSize;
+    private Integer emptyFileCnt;
+    private Long emptyFileSize;
+    private Integer failureFileCnt;
+    private Long failureFileSize;
+    private Integer duplicateFileCnt;
+    private Long duplicateFileSize;
+
 
 }

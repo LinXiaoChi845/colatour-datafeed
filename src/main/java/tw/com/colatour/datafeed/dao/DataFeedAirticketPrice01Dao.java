@@ -7,4 +7,7 @@ import java.util.List;
 public interface DataFeedAirticketPrice01Dao {
 
     void createDataFeedAirticketPrice01s(List<DataFeedAirticketPrice01> dataFeedAirticketPrice01List);
+
+    void deleteDataFeedAirticketPrice01sByFileNo(Integer fileNo);
+
 }

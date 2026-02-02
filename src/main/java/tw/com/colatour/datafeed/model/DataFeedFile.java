@@ -14,6 +14,8 @@ public class DataFeedFile {
     private Boolean successMark;
     private Timestamp importStartTime;
     private Timestamp importEndTime;
+    private String fullFileName;
+    private String filePath;
     private String fileName;
     private String dataDate;
     private String dataTime;

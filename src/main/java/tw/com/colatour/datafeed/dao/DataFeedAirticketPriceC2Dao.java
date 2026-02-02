@@ -8,4 +8,6 @@ public interface DataFeedAirticketPriceC2Dao {
 
     void createDataFeedAirticketPriceC2s(List<DataFeedAirticketPriceC2> dataFeedAirticketPriceC2List);
 
+    void deleteDataFeedAirticketPriceC2sByFileNo(Integer fileNo);
+
 }

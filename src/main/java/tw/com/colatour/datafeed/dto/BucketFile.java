@@ -1,16 +1,14 @@
 package tw.com.colatour.datafeed.dto;
 
+import com.google.cloud.storage.Blob;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class DataFeedFileParam {
+public class BucketFile {
 
-    private Integer logNo;
     private String fileName;
-    private String dataDate;
-    private String dataTime;
     private Long fileSize;
 
 }

@@ -7,17 +7,19 @@ import org.springframework.stereotype.Component;
 import tw.com.colatour.datafeed.dao.DataFeedAirticketPriceF2Dao;
 import tw.com.colatour.datafeed.model.DataFeedAirticketPriceF2;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Component
 public class DataFeedAirticketPriceF2DaoImpl implements DataFeedAirticketPriceF2Dao {
 
     @Autowired
-    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+    private NamedParameterJdbcTemplate myNamedParameterJdbcTemplate;
 
     @Override
     public void createDataFeedAirticketPriceF2s(List<DataFeedAirticketPriceF2> dataFeedAirticketPriceF2List) {
-        String mySql = "INSERT INTO data_feed.data_feed_airticket_price_F2 ( " +
+        String mySql = "INSERT INTO db_airticket.data_feed_airticket_price_f2 ( " +
                 " file_no, price_no, " +
                 " ap_fna, ap_fnb, ap_fnc, ap_fnd, ap_fne, ap_fnf, ap_fng, ap_fnh, ap_fni, ap_fnj, ap_fnk, ap_fnl, ap_fnm, " +
                 " ap_fnn, ap_fno, ap_fnp, ap_fnq, ap_fnr, ap_fns, ap_fnt, ap_fnu, ap_fnv, ap_fnw, ap_fnx, ap_fny, ap_fnz, " +
@@ -353,6 +355,18 @@ public class DataFeedAirticketPriceF2DaoImpl implements DataFeedAirticketPriceF2
             myParameterSourceAry[i].addValue("apFxp", wkDataFeedAirticketPriceF2.getApFxp());
         }
 
-        namedParameterJdbcTemplate.batchUpdate(mySql, myParameterSourceAry);
+        myNamedParameterJdbcTemplate.batchUpdate(mySql, myParameterSourceAry);
     }
+
+    @Override
+    public void deleteDataFeedAirticketPriceF2sByFileNo(Integer fileNo) {
+        String mySql = "DELETE FROM db_airticket.data_feed_airticket_price_f2 " +
+                " WHERE file_no = :fileNo ";
+
+        Map<String,Object> myMap = new HashMap<>();
+        myMap.put("fileNo", fileNo);
+
+        myNamedParameterJdbcTemplate.update(mySql, myMap);
+    }
+
 }

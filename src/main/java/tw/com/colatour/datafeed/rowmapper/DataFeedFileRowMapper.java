@@ -1,6 +1,6 @@
 package tw.com.colatour.datafeed.rowmapper;
 
-import org.jspecify.annotations.Nullable;
+import org.checkerframework.checker.nullness.qual.Nullable;
 import org.springframework.jdbc.core.RowMapper;
 import tw.com.colatour.datafeed.model.DataFeedFile;
 
@@ -18,6 +18,8 @@ public class DataFeedFileRowMapper implements RowMapper<DataFeedFile> {
         myDataFeedFile.setSuccessMark(rs.getBoolean("success_mark"));
         myDataFeedFile.setImportStartTime(rs.getTimestamp("import_start_time"));
         myDataFeedFile.setImportEndTime(rs.getTimestamp("import_end_time"));
+        myDataFeedFile.setFullFileName(rs.getString("full_file_name"));
+        myDataFeedFile.setFilePath(rs.getString("file_path"));
         myDataFeedFile.setFileName(rs.getString("file_name"));
         myDataFeedFile.setDataDate(rs.getString("data_date"));
         myDataFeedFile.setDataTime(rs.getString("data_time"));

@@ -13,11 +13,11 @@ import java.util.Map;
 public class DataFeedCustQuery01DaoImpl implements DataFeedCustQuery01Dao {
 
     @Autowired
-    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+    private NamedParameterJdbcTemplate myNamedParameterJdbcTemplate;
 
     @Override
     public void createDataFeedCustQuery01(DataFeedCustQuery01 dataFeedCustQuery01) {
-        String mySql = "INSERT INTO data_feed.data_feed_cust_query_01 ( " +
+        String mySql = "INSERT INTO db_airticket.data_feed_cust_query_01 ( " +
                 " file_no, cq_a, cq_b, cq_c, cq_d, cq_e, cq_f, cq_g, cq_h, cq_i, cq_j, cq_k, cq_l, cq_m, " +
                 " cq_n, cq_o, cq_p, cq_q, cq_r, cq_s, cq_t, cq_u, cq_v, cq_w, cq_x, cq_y, cq_z, " +
                 " cq_aa, cq_ab, cq_ac, cq_ad, cq_ae, cq_af, cq_ag, cq_ah, cq_ai, cq_aj, cq_ak, cq_al, cq_am, " +
@@ -444,6 +444,18 @@ public class DataFeedCustQuery01DaoImpl implements DataFeedCustQuery01Dao {
         myMap.put("cqMy", dataFeedCustQuery01.getCqMy());
         myMap.put("cqMz", dataFeedCustQuery01.getCqMz());
 
-        namedParameterJdbcTemplate.update(mySql, myMap);
+        myNamedParameterJdbcTemplate.update(mySql, myMap);
     }
+
+    @Override
+    public void deleteDataFeedCustQuery01 (Integer fileNo) {
+        String mySql = "DELETE FROM db_airticket.data_feed_cust_query_01 " +
+                " WHERE file_no = :fileNo ";
+
+        Map<String,Object> myMap = new HashMap<>();
+        myMap.put("fileNo", fileNo);
+
+        myNamedParameterJdbcTemplate.update(mySql, myMap);
+    }
+
 }

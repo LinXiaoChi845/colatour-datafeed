@@ -6,8 +6,6 @@ import java.util.List;
 
 public interface DataFeedLogDao {
 
-    List<DataFeedLog> getDataFeedLogs();
-
     DataFeedLog getDataFeedLogByLogNo(Integer logNo);
 
     Integer createDataFeedLog();

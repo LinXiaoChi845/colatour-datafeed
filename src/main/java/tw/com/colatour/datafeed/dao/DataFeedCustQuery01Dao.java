@@ -6,4 +6,5 @@ public interface DataFeedCustQuery01Dao {
 
     void createDataFeedCustQuery01(DataFeedCustQuery01 dataFeedCustQuery01);
 
+    void deleteDataFeedCustQuery01(Integer fileNo);
 }
